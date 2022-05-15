@@ -25,10 +25,10 @@ jobs:
         include:
           #  两行一组，删除不需要的版本
           - platform: ds3617xs
-            version: 7.0.1-42661
+            version: 7.1.0-42661
 
           - platform: ds3622xsp
-            version: 7.0.1-42661
+            version: 7.1.0-42661
 
     steps:
       - name: 检出项目文件
@@ -82,6 +82,7 @@ jobs:
           ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-acpid.json
           ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-virtio.json
           ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/vmxnet3/rpext-index.json
+          ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/sky2/rpext-index.json
          
   
       - name: 添加扩展驱动[dva3221]
