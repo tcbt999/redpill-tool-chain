@@ -24,10 +24,9 @@ jobs:
       matrix:
         include:
           #  两行一组，删除不需要的版本
-          - platform: ds1621p
+          - platform: ds3615xs
             version: 7.0.1-42218
-          - platform: ds1621p
-            version: 7.1.0-42661           
+         
         #  - platform: ds3617xs
         #    version: 7.1.0-42661
 
@@ -82,8 +81,7 @@ jobs:
          #   ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/sky2/rpext-index.json
         if: matrix.platform != 'dva3221'
         run: |
-          ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-boot-wait.json
-          ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/sky2/rpext-index.json        
+             ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/sky2/rpext-index.json        
     
       - name: 添加扩展驱动[dva3221]
         if: matrix.platform == 'dva3221'
@@ -92,8 +90,8 @@ jobs:
           ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-boot-wait.json
 
       - name: 添加 Misc shell
-        run: |
-          ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-misc.json
+       # run: |
+       #   ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-misc.json
 
       - name: 添加 jumkey.dtb !!!Create your own device tree binary!!!
         if: matrix.platform == 'ds920p' || matrix.platform == 'ds1621p' || matrix.platform == 'ds2422p'
