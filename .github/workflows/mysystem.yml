@@ -81,6 +81,8 @@ jobs:
          #   ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/sky2/rpext-index.json
         if: matrix.platform != 'dva3221'
         run: |
+             ./redpill_tool_chain.sh add https://github.com/pocopico/redpill-load/raw/develop/redpill-acpid/rpext-index.json
+             ./redpill_tool_chain.sh add https://github.com/pocopico/redpill-load/raw/develop/redpill-misc/rpext-index.json
              ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/sky2/rpext-index.json        
     
       - name: 添加扩展驱动[dva3221]
